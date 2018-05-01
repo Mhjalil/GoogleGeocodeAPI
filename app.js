@@ -1,10 +1,22 @@
 
 // Call Geocode
-geocode();
+
+//geocode();
+
+// Get location form
+let locationForm = document.getElementById('location-form');
+
+// Listen for submit
+locationForm.addEventListener('submit',geocode);
 
 // Geocode Function
-function geocode() {
-    var location = 'Brisbane';
+function geocode(e) {
+
+    // Prevent actual submit
+    e.preventDefault();
+
+    let location = document.getElementById('location-input').value;
+    
     axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
     params: {
         address: location,
