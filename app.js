@@ -16,8 +16,8 @@ function geocode() {
     console.log(response); 
     
     // Formatted Address
-    var formattedAddress = response.data.results[0].formatted_address;
-    var formattedAddressOutput = `
+    let formattedAddress = response.data.results[0].formatted_address;
+    let formattedAddressOutput = `
     <ul class="list-group">
     <li class="list-group-item">${formattedAddress}</li>
     </ul>
@@ -32,10 +32,21 @@ function geocode() {
         `;
     }
     addressComponentsOutput += '</ul>'
+
+    // Geometry lat & lng
+    let lat = response.data.results[0].geometry.location.lat;
+    let lng = response.data.results[0].geometry.location.lng;
+    let geometryOutput = `
+    <ul class="list-group">
+    <li class="list-group-item"><strong>Latitude:</strong>${lat}</li>
+    <li class="list-group-item"><strong>Longitude:</strong>${lng}</li>
+    </ul>
+    `;
     
     // Output to app
     document.getElementById('formatted-address').innerHTML = formattedAddressOutput;
     document.getElementById('address-components').innerHTML = addressComponentsOutput;
+    document.getElementById('geometry').innerHTML = geometryOutput;
 })
 .then(function(error) {
     console.log(error);  
