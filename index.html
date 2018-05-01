@@ -27,7 +27,11 @@
                 }
             })
             .then(function(response) {
-                console.log(response);  
+                // Log full response
+                console.log(response); 
+                
+                // Formatted Address
+                console.log(response.data.results[0].formatted_address);
             })
             .then(function(error) {
                 console.log(error);  
