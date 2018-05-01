@@ -4,12 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <!-- <link rel="stylesheet" href="style.css" type="text/css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>My Geocode App</title>
 </head>
 
 <body>
     
+
+    <script>
+        // Call Geocode
+        geocode();
+
+        // Geocode Function
+        function geocode() {
+            var location = '40 Duncan st West End Brisbane QLD';
+            axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
+                params: {
+                    address: location,
+                    key: 'AIzaSyA02hYE9vXQeHEZZu7l4dQJzkzxTWfA6zk'
+                }
+            })
+            .then(function(response) {
+                cosole.log(response);  
+            })
+            .then(function(error) {
+                cosole.log(error);  
+            });        
+        } 
+    </script>
 
 </body>
 
