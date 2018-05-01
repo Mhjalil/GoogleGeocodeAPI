@@ -4,7 +4,7 @@ geocode();
 
 // Geocode Function
 function geocode() {
-    var location = '40 Duncan st West End Brisbane QLD';
+    var location = 'Brisbane';
     axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
     params: {
         address: location,
