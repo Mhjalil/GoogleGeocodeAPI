@@ -1,6 +1,5 @@
 
 // Call Geocode
-
 //geocode();
 
 // Get location form
@@ -16,7 +15,7 @@ function geocode(e) {
     e.preventDefault();
 
     let location = document.getElementById('location-input').value;
-    
+
     axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
     params: {
         address: location,
@@ -24,6 +23,7 @@ function geocode(e) {
     }
 })
 .then(function(response) {
+    
     // Log full response
     console.log(response); 
     

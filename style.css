@@ -1,4 +1,26 @@
-#map {
-    height: 400px;
-    width: 100%;
-   }
+/* .main {
+    -ms-flex-item-align: center;
+} */
+
+#text-centre{
+    padding-top: 30px;
+}
+
+.container-fluid {
+  margin: 0 auto;
+}
+
+
+
+/* .gray{
+    background:gray;
+} */
+
+/* .col-md-4, .col-xs-4{
+    display: table-cell;
+    float: none;
+} */
+
+/* #formatted-address{
+    -ms-flex-align: center;
+} */
